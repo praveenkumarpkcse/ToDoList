@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 img-body">
+      <img src="../assets/wave.svg" class="img-responsive waves-img">
+      <img src="../assets/banner.svg" class="img-responsive banner-img">
+    </div>
+    <div class="col-lg-6 input-form">
+     <div class="row">
+       <div class="col-lg-12">
+         <h1 class="header-text">Task List</h1>
+       </div>
+       <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-9">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter the Task" [(ngModel)]="taskInput">
+              </div>
+            </div>
+            <div class="col-lg-1">
+              <button type="submit" class="btn btn-dark add-btn" (click)="TaskAdd()">Add</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+              <div class="box" *ngFor="let TaskList of taskArray">
+                <span class="taskList-text">{{TaskList}}</span>
+                <button class="btn btn-danger delete-btn" (click)="deleteTask(TaskList)">Delete</button>
+              </div>
+              <div class="box" *ngIf="emptyArray">
+                <span class="taskList-text">Nothing is added yet...!</span>
+              </div>
+            </div>
+          </div>
+       </div>
+     </div>
+    </div>
+  </div>
+</div>
